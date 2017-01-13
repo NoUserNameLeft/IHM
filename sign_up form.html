@@ -6,13 +6,14 @@
     <script src="bootstrap/bootstrap.min.js"></script>
   </head>
   <body>
+  
     <br>
-    <div class="container" >
+        <div class="container" >
 
       <div class="row">
          <div class="col-xs-4"></div>
          <div class="col-xs-4 well well-sm">
-           <legend>Sign up</legend>
+           <b><legend >S'inscrire</legend></b>
            <form action="banana.html">
            <div class="row">
               <div class="col-xs-6 col-md-6">
@@ -25,7 +26,12 @@
 
            <input class="form-control" name="youremail" placeholder="Votre Courriel" type="email" />
            <input class="form-control" name="username" placeholder="Nom d'utilisateur" type="text" />
-           <input class="form-control" name="password" placeholder="Mot de passe" type="password" />
+           <input class="form-control" name="password" placeholder="Mot de passe" type="password" id="pass" />
+           <script>
+		   		var pass = document.getElementById("pass").value;
+				document.write(no);
+				
+		   </script>
            <input class="form-control" name="re-password" placeholder="Confirmez votre mot de passe" type="password" />
 
            <label for="" type="text">Sexe: </label>
@@ -40,19 +46,37 @@
            <br>
            <label for="">Date de naissance: </label>
            <div class="row">
+           
               <div class="col-xs-4 col-md-4">
-                  <select class="form-control">
-                      <option value="Month">Month</option>
+                  <select class="form-control" >
+                  	  <option value="Year">Janvier</option>
+                 	  <option value="Year">Fevrier</option>
+                      <option value="Year">Mars</option>
+                      <option value="Year">Avril</option>
+                      <option value="Year">Mai</option>
+                      <option value="Year">Juin</option>
+                      <option value="Year">Juillet</option>
+                      <option value="Year">Aout</option>
+                      <option value="Year">Septembre</option>
+                      <option value="Year">Octobre</option>
+                      <option value="Year">Novembre</option>
+                      <option value="Year">Decembre</option>
                   </select>
               </div>
               <div class="col-xs-4 col-md-4">
                   <select class="form-control">
-                      <option value="Day">Day</option>
+                      <script type="text/javascript">	  
+					for (var i = 1 ; i < 31; i++){
+                      document.write('<option value="' +i+ '">'+i+'</option>')}
+					</script>
                   </select>
               </div>
               <div class="col-xs-4 col-md-4">
                   <select class="form-control">
-                      <option value="Year">Year</option>
+                       <script type="text/javascript">	  
+					for (var i = 1890 ; i < 2007; i++){
+                      document.write('<option value="' +i+ '">'+i+'</option>')}
+					</script>
                   </select>
               </div>
             </div>

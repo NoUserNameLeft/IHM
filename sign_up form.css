@@ -8,9 +8,8 @@ input[type=password] {
     box-sizing: border-box;
 }
 
-form {
-}
 
 legend {
-  text-align: center;
+	text-align: center;
+	text-color: #5B93D5;
 }
