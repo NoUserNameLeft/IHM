@@ -1,0 +1,39 @@
+@charset "utf-8";
+body,html {
+     background: url('Images/BG.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+ h2 {
+  border-bottom: 5px solid #3F92CF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 65px;
+  font-weight: 900;	
+  margin: 0 auto;
+  padding: 20px 0 3px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 40.2%;
+  	color:#003333 ;
+}
+.pop-outer{
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+.pop-inner{
+	background-color: #fff;
+	width: 500px;
+	height: 400px;
+	padding: 25px;
+	margin: 15% auto;
+}
+legend {
+	text-align: center;
+	text-color: #5B93D5;
+}

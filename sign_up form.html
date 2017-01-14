@@ -4,8 +4,27 @@
     <link rel="stylesheet" type="text/css" href="sign_up form.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
     <script type="text/javascript">
+	
+			$( function() {
+    var availableusername = [
+      "Phillip123",
+      "Jean45",
+      "Anna789",
+      "Canet66",
+      "Missforture",
+      "Birain",
+      "Cloder",
+      "Dame"
+      
+    ];
+    $( "#username" ).autocomplete({
+      source: availableusername
+    });
+  } );
 			function Check_agree()
 			{
 				var i = document.getElementById('agree');
@@ -53,6 +72,8 @@
 					
 			   }
             }
+			
+		
 		
       </script>
   </head>
@@ -70,6 +91,7 @@
            <form action="home_page.html" >
            <div class="row">
               <div class="col-xs-6 col-md-6">
+              
                 <input class="form-control"  placeholder="Nom" type="text"  id ="fname"  />
               </div>
               <div class="col-xs-6 col-md-6">
@@ -79,6 +101,7 @@
 
            <input class="form-control"  placeholder="Votre Courriel" type="email" id="email" />
            <input class="form-control"  placeholder="Nom d'utilisateur" type="text" id ="username"/>
+           
            <input class="form-control"  placeholder="Mot de passe" type="password" id="pass" />
          
            <input class="form-control"  placeholder="Confirmez votre mot de passe" type="password" />
@@ -145,6 +168,7 @@
             <hr>
             <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Check();">Sign up</button>
           </form>
+          
         </div>
         <div class="col-xs-4"></div>
       </div>
