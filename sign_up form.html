@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script type="text/javascript">
-	
+
 			$( function() {
     var availableusername = [
       "Phillip123",
@@ -19,7 +19,7 @@
       "Birain",
       "Cloder",
       "Dame"
-      
+
     ];
     $( "#username" ).autocomplete({
       source: availableusername
@@ -30,59 +30,76 @@
 				var i = document.getElementById('agree');
 				if(i.checked)
 					return true;
-				return false	;	
+				return false	;
 			}
 			function Check_username()
 			{
 				var i = document.getElementById('username');
 				if(i.value !="")
-					
+
 					return true	;
-				
-				return false;	
+
+				return false;
 			}
 			function Check_email()
 			{
 				var i =document.getElementById('email');
 				if(i.value !="")
-					return true;	
-				return false;	
+					return true;
+				return false;
 			}
-			
+
 			function Check_sexe()
 			{
 				if( document.getElementById('Ma').checked || document.getElementById('Fe').checked)
 					return true	;
-				return false;	
+				return false;
 			}
-			
+
 			function Check_pass()
 			{
 				if( document.getElementById('pass').value !="" && document.getElementById('pass').value.length > 8)
-					return true;	
-				return false;	
+					return true;
+				return false;
 			}
             function Check() {
-			
+
 				if(Check_agree())//&& Check_sexe()&&Check_username()
              	 location.reload(true);
 			   else
 			   {
 			   		alert("Re-verifiez votre information");
-					
+
 			   }
             }
-			
-		
-		
+
+
+
       </script>
   </head>
 
   <body>
-  
-    <br>
- 
-    
+
+    <div class="row text-center">
+  		<h2><font color="#400040"><b>Gestion de l'universite </b></font></h2>
+          <p><font color="#400040">Image caption with a text previewed in the bottom</font></p>
+  	</div>
+
+
+      <nav class="navbar navbar-default" style="background-color:#8999A8">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="banana.html">Page 2</a></li>
+            <li><a href="banana.html">Page 3</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="log_in form.html"><span class="glyphicon glyphicon-log-in"></span>Enregistrer</a></li>
+          </ul>
+        </div>
+      </nav>
     <div class="container" >
       <div class="row">
          <div class="col-xs-4"></div>
@@ -91,7 +108,7 @@
            <form action="home_page.html" >
            <div class="row">
               <div class="col-xs-6 col-md-6">
-              
+
                 <input class="form-control"  placeholder="Nom" type="text"  id ="fname"  />
               </div>
               <div class="col-xs-6 col-md-6">
@@ -101,9 +118,9 @@
 
            <input class="form-control"  placeholder="Votre Courriel" type="email" id="email" />
            <input class="form-control"  placeholder="Nom d'utilisateur" type="text" id ="username"/>
-           
+
            <input class="form-control"  placeholder="Mot de passe" type="password" id="pass" />
-         
+
            <input class="form-control"  placeholder="Confirmez votre mot de passe" type="password" />
 
            <label for="" type="text" id="sexe">Sexe: </label>
@@ -118,7 +135,7 @@
            <br>
            <label for="">Date de naissance: </label>
            <div class="row">
-           
+
               <div class="col-xs-4 col-md-4">
                   <select class="form-control" >
                   	  <option value="jan">Janvier</option>
@@ -137,7 +154,7 @@
               </div>
               <div class="col-xs-4 col-md-4">
                   <select class="form-control">
-                      <script type="text/javascript">	  
+                      <script type="text/javascript">
 					for (var i = 1 ; i < 31; i++){
                       document.write('<option value="' +i+ '">'+i+'</option>')}
 					</script>
@@ -145,7 +162,7 @@
               </div>
               <div class="col-xs-4 col-md-4">
                   <select class="form-control">
-                       <script type="text/javascript">	  
+                       <script type="text/javascript">
 					for (var i = 1890 ; i < 1969; i++){
                       document.write('<option value="' +i+ '">'+i+'</option>')}
 					</script>
@@ -153,7 +170,7 @@
               </div>
             </div>
             <br>
-            
+
 	</script>
             <label for="" type="text" >Nationalite: </label>
             <select class="form-control">
@@ -164,11 +181,11 @@
             </select>
             <br>
             <input type="checkbox"  id ="agree"> J'accepte les <a href="banana.html">Termes et Conditions </a>.
-			
+
             <hr>
             <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Check();">Sign up</button>
           </form>
-          
+
         </div>
         <div class="col-xs-4"></div>
       </div>

@@ -13,3 +13,9 @@ legend {
 	text-align: center;
 	text-color: #5B93D5;
 }
+body,html {
+     background: url('Images/BG.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
