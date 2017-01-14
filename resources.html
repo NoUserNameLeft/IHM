@@ -15,6 +15,14 @@
 
     <script type="text/javascript">
       $('#overlay').fadeIn('fast').delay(3000).fadeOut('fast');
+      $(function(){
+
+    $('#trigger').click(function(){
+      $('#myModal').modal('show');
+      return false;
+    })
+
+    });
     </script>
 
     <script type="text/javascript">
@@ -68,23 +76,23 @@
   <div style="display: none;" class="pop-outer">
   	<div class ="pop-inner">
     	<button class="close "><b> X</b></button>
-        <form>
-        <div class="container" >
-      		<div class="row">
-       		  <div class="col-xs-4"></div>
-        		 <div class="col-xs-4 well well-sm">
-               <legend>Ajouter une element</legend>
+      <form>
+      <div class="container" >
+    		<div class="row">
+     		  <div class="col-xs-4"></div>
+      		 <div class="col-xs-4 well well-sm">
+             <legend>Ajouter une element</legend>
 
-               <input class="form-control" placeholder="Nom" id="nom" type="text" />
-               <input class="form-control"  placeholder="Prenom" id="prenom" type="text" />
-               <input class="form-control"  placeholder="Numero d'etudiant" id="numero" type="text" />
-               <input class="form-control"  placeholder="Classe" id="classe" type="text" />
-               <input class="form-control" placeholder="Date" id="date" type="text" />
-               <input class="form-control"  placeholder="Lieu de naisance" id="lieu" type="text" />
+             <input class="form-control" placeholder="Nom" id="nom" type="text" />
+             <input class="form-control"  placeholder="Prenom" id="prenom" type="text" />
+             <input class="form-control"  placeholder="Numero d'etudiant" id="numero" type="text" />
+             <input class="form-control"  placeholder="Classe" id="classe" type="text" />
+             <input class="form-control" placeholder="Date" id="date" type="text" />
+             <input class="form-control"  placeholder="Lieu de naisance" id="lieu" type="text" />
 
-               <br>
+             <br>
 
-               <input onclick="a()"  class="btn btn-lg btn-primary" type="button" value="Ajouter">
+             <input onclick="a()"  class="btn btn-lg btn-primary" type="button" value="Ajouter">
             </div>
           </div>
         </div>
@@ -117,9 +125,7 @@
     </nav>
     <div class="container">
       <div class="btn-toolbar">
-
         <button  class ="open btn btn-primary">Nouveau</button>
-
       </div>
       <br>
       <div class="row">
