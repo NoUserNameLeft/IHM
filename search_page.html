@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page d'accueil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="home_page.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://raw.githubusercontent.com/javve/list.js/v1.4.0/dist/list.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+ 	</head>
+  <body>
+
+  <div class="row text-center">
+		<h2><font color="#400040"><b>Gestion de l'universite </b></font></h2>
+        <p><font color="#400040">Image caption with a text previewed in the bottom</font></p>
+	</div>
+
+
+    <nav class="navbar navbar-default" style="background-color:#8999A8">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home_page.html">Home</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources_2.html">Resources 2</a></li>
+          <li><a href="slide_show.html">Diaporama</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="sign_up form.html"><span class="glyphicon glyphicon-user"></span>S'inscrire</a></li>
+          <li><a href="log_in form.html"><span class="glyphicon glyphicon-log-in"></span>Se connecter</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="users">
+
+<!-- class="search" automagically makes an input a search field. -->
+  <input class="search" placeholder="Search" />
+<!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
+  <button class="sort" data-sort="name">
+    Sort
+  </button>
+  <script>
+  var options = {
+  valueNames: [ 'name', 'born' ]
+};
+
+var userList = new List('users', options);
+  </script>
+
+<!-- Child elements of container with class="list" becomes list items -->
+  <ul class="list">
+    <li>
+<!-- The innerHTML of children with class="name" becomes this items "name" value -->
+      <h3 class="name">Jonny Stromberg</h3>
+      <p class="born">1986</p>
+    </li>
+    <li>
+      <h3 class="name">Jonas Arnklint</h3>
+      <p class="born">1985</p>
+    </li>
+    <li>
+      <h3 class="name">Martina Elm</h3>
+      <p class="born">1986</p>
+    </li>
+    <li>
+      <h3 class="name">Gustaf Lindqvist</h3>
+      <p class="born">1983</p>
+    </li>
+  </ul>
+
+</div>
+
+  </body>
+</html>
