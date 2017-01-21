@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page d'accueil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="home_page.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+
+    <script>
+    var monkeyList = new List('test-list', {
+      valueNames: [ 'name', 'age' ],
+      plugins: [ ListFuzzySearch() ]
+    });
+
+
+
+    </script>
+
+ 	</head>
+  <body>
+
+  <div class="row text-center">
+		<h2><font color="#400040"><b>Gestion de l'universite </b></font></h2>
+        <p><font color="#400040">Image caption with a text previewed in the bottom</font></p>
+	</div>
+
+
+    <nav class="navbar navbar-default" style="background-color:#8999A8">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="home_page.html">Home</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources_2.html">Resources 2</a></li>
+          <li class="active"><a href="search.html">Search</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="sign_up form.html"><span class="glyphicon glyphicon-user"></span>S'inscrire</a></li>
+          <li><a href="log_in form.html"><span class="glyphicon glyphicon-log-in"></span>Se connecter</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="users">
+        <input class="search form-control" placeholder="Search" />
+        <button class="sort open btn btn-primary" data-sort="number">
+            Liste originale
+        </button>
+        <button class="sort open btn btn-primary" data-sort="name">
+            Trier par nom de la resource
+        </button>
+        <button class="sort open btn btn-primary" data-sort="campus">
+            Trier par nom du campus
+        </button>
+        <table class="table table-hover" id="myTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom de la resource</th>
+              <th>Nom du campus</th>
+              <th>Quantite</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody  class="list">
+            <tr>
+              <td class="number">1</td>
+              <td class="name">Batiment I</td>
+              <td class="campus">Nguyen Van Cu</td>
+              <td>1</td>
+              <td>Le plus haut batiment du campus.</td>
+            </tr>
+            <tr>
+              <td class="number">2</td>
+              <td class="name">Batiment principal</td>
+              <td class="campus">Linh Trung</td>
+              <td>1</td>
+              <td>Le plus grand batiment du campus.</td>
+            </tr>
+            <tr>
+              <td class="number">3</td>
+              <td class="name">Batiment E</td>
+              <td class="campus">Nguyen Van Cu</td>
+              <td>1</td>
+              <td>Le plus ancien batiment du campus.</td>
+            </tr>
+            <tr>
+              <td class="number">4</td>
+              <td class="name">Grande bibliotheque</td>
+              <td class="campus">Linh Trung</td>
+              <td>1</td>
+              <td>Elle est tres grande.</td>
+            </tr>
+            <tr>
+              <td class="number">5</td>
+              <td class="name">Vieux dortoir</td>
+              <td class="campus">Linh Trung</td>
+              <td>7</td>
+              <td>Beaucoup d'étudiants vivent ici.</td>
+            </tr>
+            <tr>
+              <td class="number">6</td>
+              <td class="name">Nouveau dortoir</td>
+              <td class="campus">Linh Trung</td>
+              <td>12</td>
+              <td>Beaucoup d'étudiants vivent ici.</td>
+            </tr>
+            <tr>
+              <td class="number">7</td>
+              <td class="name">Sentier ombragé</td>
+              <td class="campus">Linh Trung</td>
+              <td>1</td>
+              <td>Très pratique pour une journée ensoleillée.</td>
+            </tr>
+            <tr>
+              <td class="number">8</td>
+              <td class="name">Batiment A</td>
+              <td class="campus">Nguyen Van Cu</td>
+              <td>1</td>
+              <td>Il appartient au département mathématiques.</td>
+            </tr>
+            <tr>
+              <td class="number">9</td>
+              <td class="name">Porte principale</td>
+              <td class="campus">Linh Trung</td>
+              <td>1</td>
+              <td>Pour arriver au Linh Trung campus, vous devez traverser ici.</td>
+            </tr>
+            <tr>
+              <td class="number">10</td>
+              <td class="name">Plante en pot incliné</td>
+              <td class="campus">Nguyen Van Cu</td>
+              <td>1</td>
+              <td>Pas de description.</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <script>
+      var options = {
+        valueNames: [ 'name', 'number', 'campus' ]
+      };
+
+      var userList = new List('users', options);
+
+
+      </script>
+    </div>
+  </body>
+</html>

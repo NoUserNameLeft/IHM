@@ -1,148 +1,111 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.fuzzysearch.js/0.1.0/list.fuzzysearch.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div id="users">
+    <input  class="search" placeholder="Search" />
+    <button class="sort" data-sort="number">
+        Liste originale
+    </button>
+    <button class="sort" data-sort="name">
+        Trier par nom de la resource
+    </button>
+    <button class="sort" data-sort="campus">
+        Trier par nom du campus
+    </button>
 
-    <link rel="stylesheet" type="text/css" href="home_page.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
+    <table class="table table-hover" id="myTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom de la resource</th>
+          <th>Nom du campus</th>
+          <th>Quantite</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody  class="list">
+        <tr>
+          <td class="number">1</td>
+          <td class="name">Batiment I</td>
+          <td class="campus">Nguyen Van Cu</td>
+          <td>1</td>
+          <td>Le plus haut batiment du campus.</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td class="name">Batiment principal</td>
+          <td class="campus">Linh Trung</td>
+          <td>1</td>
+          <td>Le plus grand batiment du campus.</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td class="name">Batiment E</td>
+          <td class="campus">Nguyen Van Cu</td>
+          <td>1</td>
+          <td>Le plus ancien batiment du campus.</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td class="name">Grande bibliotheque</td>
+          <td class="campus">Linh Trung</td>
+          <td>1</td>
+          <td>Elle est tres grande.</td>
+        </tr>
+        <tr>
+          <td class="number">5</td>
+          <td class="name">Vieux dortoir</td>
+          <td class="campus">Linh Trung</td>
+          <td>7</td>
+          <td>Beaucoup d'étudiants vivent ici.</td>
+        </tr>
+        <tr>
+          <td class="number">6</td>
+          <td class="name">Nouveau dortoir</td>
+          <td class="campus">Linh Trung</td>
+          <td>12</td>
+          <td>Beaucoup d'étudiants vivent ici.</td>
+        </tr>
+        <tr>
+          <td class="number">7</td>
+          <td class="name">Sentier ombragé</td>
+          <td class="campus">Linh Trung</td>
+          <td>1</td>
+          <td>Très pratique pour une journée ensoleillée.</td>
+        </tr>
+        <tr>
+          <td class="number">8</td>
+          <td class="name">Batiment A</td>
+          <td class="campus">Nguyen Van Cu</td>
+          <td>1</td>
+          <td>Il appartient au département mathématiques.</td>
+        </tr>
+        <tr>
+          <td class="number">9</td>
+          <td class="name">Porte principale</td>
+          <td class="campus">Linh Trung</td>
+          <td>1</td>
+          <td>Pour arriver au Linh Trung campus, vous devez traverser ici.</td>
+        </tr>
+        <tr>
+          <td class="number">10</td>
+          <td class="name">Plante en pot incliné</td>
+          <td class="campus">Nguyen Van Cu</td>
+          <td>1</td>
+          <td>Pas de description.</td>
+        </tr>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      </tbody>
+    </table>
+  </div>
 
-    <script>
-        $(document).ready(function(){
-        $( "#test" ).hover(function() {
-               $('.modal').modal({
-            show: true
-        });
-      });
-    });
-    </script>
+<script>
+var options = {
+  valueNames: [ 'name', 'number', 'campus' ]
+};
 
-</head>
-  <body>
-
-        <div class="row text-center">
-      		<h2><font color="#400040"><b>Gestion de l'universite </b></font></h2>
-              <p><font color="#400040">Image caption with a text previewed in the bottom</font></p>
-      	</div>
-
-
-        <nav class="navbar navbar-default" style="background-color:#8999A8">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li><a href="home_page.html">Home</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li class="active"><a href="resources_2.html">Resources 2</a></li>
-              <li><a href="banana.html">Page 3</a></li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="sign_up form.html"><span class="glyphicon glyphicon-user"></span>S'inscrire</a></li>
-              <li><a href="log_in form.html"><span class="glyphicon glyphicon-log-in"></span>Enregistrer</a></li>
-            </ul>
-          </div>
-        </nav>
-
-
-    <ul>
-          <li>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-                        <div class="overlay">
-                            <p> 1</p>
-                    				<p>
-                    					something
-                    				</p>
-                        </div>
-                </div>
-            </div>
-          </li>
-    		<li>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-                        <div class="overlay">
-                            <h2>Effect 13</h2>
-                    				<p>
-                    					5
-                    				</p>
-                        </div>
-                </div>
-            </div>
-          </li>
-
-    	  <li>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-                        <div class="overlay">
-                            <h2>2</h2>
-                    				<p>
-                    					something
-                    				</p>
-                        </div>
-                </div>
-            </div>
-          </li>
-
-    	  <li>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-                        <div class="overlay">
-                            <h2>123</h2>
-                    				<p>
-                    					something
-                    				</p>
-                        </div>
-                </div>
-            </div>
-          </li>
-
-    	  <li>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-                        <div class="overlay">
-                            <h2>99</h2>
-                    				<p>
-                    					something
-                    				</p>
-                        </div>
-                </div>
-            </div>
-          </li>
-        </ul>
+var userList = new List('users', options);
 
 
-    	<button>Sort</button>
-      <script>
-
-      $(function() {
-        $('button').click(function() {
-            var liContents = [];
-            $('ul li').each(function() {
-                liContents.push($(this).html());
-            });
-            liContents.sort(numOrdDesc);
-            $('ul li').each(function() {
-                $(this).html(liContents.pop());
-            });
-        });
-      });
-
-      function numOrdDesc(a, b) {
-        return (parseInt(b) - parseInt(a));
-      }
-
-      </script>
-
-  </body>
-</html>
+</script>
