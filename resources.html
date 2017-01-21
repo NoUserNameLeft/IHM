@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="trigger.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -30,8 +33,27 @@
 		});
 	});
 	  </script>
+       
     <script >
-
+		var id = 0;
+		function getId(x)
+		{
+			id = x;
+			
+		}
+		
+		function Edit()
+		{
+			var myTable = document.getElementById('myTable');
+			if(document.getElementById('n1').value !="")
+			myTable.rows[id].cells[1].innerHTML =document.getElementById('n1').value;
+			if(document.getElementById('n2').value !="")
+			myTable.rows[id].cells[2].innerHTML =document.getElementById('n2').value;
+			if(document.getElementById('n3').value !="")
+			myTable.rows[id].cells[3].innerHTML =document.getElementById('n3').value;
+			if(document.getElementById('n4').value !="")
+			myTable.rows[id].cells[4].innerHTML =document.getElementById('n4').value;
+		}
     	function a()
     	{
 
@@ -42,24 +64,28 @@
     	var  numero =  document.getElementById('numero').value;
 
     	var table = document.getElementById("myTable");
-    	var row = table.insertRow(11);
+		var x = document.getElementById("myTable").rows.length;
+    	var row = table.insertRow(x);
     	var cell0 = row.insertCell(0);
     	var cell1 = row.insertCell(1);
     	var cell2 = row.insertCell(2);
     	var cell3 = row.insertCell(3);
     	var cell4 = row.insertCell(4);
       var cell5 = row.insertCell(5);
-      cell0.innerText = '11';
+	   var cell6 = row.insertCell(6);
+	  
+      cell0.innerText = x;
     	cell1.innerText = nom;
     	cell2.innerText = prenom;
     	cell3.innerText = numero;
     	cell4.innerText = classe;
-      cell5.innerHTML = '<input onclick="b()" class="btn btn-lg btn-primary" type="button" value="Supprimer">';
+      cell5.innerHTML = '<td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id="'+x+'"  onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>';
+	   cell6.innerHTML ='<td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id="'+x+'"  onClick="getId(this.id)"><span class="glyphicon glyphicon-trash"></span></button></p></td>';
     	};
 
       function b()
       {
-        document.getElementById("myTable").deleteRow(11);
+        document.getElementById("myTable").deleteRow(id);
       };
 	  </script>
 
@@ -67,22 +93,31 @@
   <body>
   <div style="display: none;" class="pop-outer">
   	<div class ="pop-inner">
-    	<button class="close "><b> X</b></button>
+    	
       <form>
         <div class="container" >
     		  <div class="row">
-     		    <div class="col-xs-4"></div>
+     		    <div class="col-xs-12"></div>
       		    <div class="col-xs-4 well well-sm">
-                 <legend>Ajouter une element</legend>
-
+                 <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h4 class="modal-title custom_align" id="Heading">Ajouter une element</h4>
+               
+</div>
                  <input class="form-control" placeholder="Nom de la resource" id="nom" type="text" />
+                 <br>
                  <input class="form-control"  placeholder="Nom du campus" id="prenom" type="text" />
+                    <br>
                  <input class="form-control"  placeholder="Quantite" id="numero" type="text" />
+                    <br>
                  <input class="form-control"  placeholder="Description" id="classe" type="text" />
 
                  <br>
-
-                 <input onclick="a()" class="btn btn-lg btn-primary" type="button" value="Ajouter" >
+					
+                      <div class="modal-footer ">
+                 <input onclick="a()" class="btn btn-warning btn-lg block" type="button" value="Ajouter" >
+                </div>
+                 
 
             </div>
           </div>
@@ -125,27 +160,34 @@
             <table class="table table-hover" id="myTable">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Nom de la resource</th>
-                  <th>Nom du campus</th>
-                  <th>Quantite</th>
-                  <th>Description</th>
+                  <td>#</td>
+                  <td>Nom de la resource</td>
+                  <td>Nom du campus</td>
+                  <td>Quantite</td>
+                  <td>Description</td>
+                  <td>Modifier</td> 
+                  <td>Supprimer</td>
+                   
                 </tr>
               </thead>
               <tbody >
-                <tr>
+                <tr >
                   <td>1</td>
                   <td>Batiment I</td>
                   <td>Nguyen Van Cu</td>
                   <td>1</td>
                   <td>Le plus haut batiment du campus.</td>
-                </tr>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"  id ="1" onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"   id ="1" onClick="getId(this.id)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                 
                 <tr>
                   <td>2</td>
                   <td>Batiment principal</td>
                   <td>Linh Trung</td>
                   <td>1</td>
                   <td>Le plus grand batiment du campus.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="2" onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="2" onClick="getId(this.id)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -153,6 +195,8 @@
                   <td>Nguyen Van Cu</td>
                   <td>1</td>
                   <td>Le plus ancien batiment du campus.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="3" onClick="getId(this.id)" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="3" onClick="getId(this.id)" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -160,6 +204,8 @@
                   <td>Linh Trung</td>
                   <td>1</td>
                   <td>Elle est tres grande.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="4" onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>5</td>
@@ -167,6 +213,8 @@
                   <td>Linh Trung</td>
                   <td>7</td>
                   <td>Beaucoup d'étudiants vivent ici.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="5" onClick="getId(this.id)" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="5" onClick="getId(this.id)" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>6</td>
@@ -174,6 +222,8 @@
                   <td>Linh Trung</td>
                   <td>12</td>
                   <td>Beaucoup d'étudiants vivent ici.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="6" onClick="getId(this.id)" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="6" onClick="getId(this.id)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>7</td>
@@ -181,6 +231,9 @@
                   <td>Linh Trung</td>
                   <td>1</td>
                   <td>Très pratique pour une journée ensoleillée.</td>
+                  <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="7" onClick="getId(this.id)" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="7" onClick="getId(this.id)" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+  
                 </tr>
                 <tr>
                   <td>8</td>
@@ -188,6 +241,8 @@
                   <td>Nguyen Van Cu</td>
                   <td>1</td>
                   <td>Il appartient au département mathématiques.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="8" onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="8" onClick="getId(this.id)" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>9</td>
@@ -195,6 +250,8 @@
                   <td>Linh Trung</td>
                   <td>1</td>
                   <td>Pour arriver au Linh Trung campus, vous devez traverser ici.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="9" onClick="getId(this.id)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="9" onClick="getId(this.id)" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -202,6 +259,8 @@
                   <td>Nguyen Van Cu</td>
                   <td>1</td>
                   <td>Pas de description.</td>
+                   <td><p  title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" id ="10" onClick="getId(this.id)" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   				 <td><p  title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" id ="10" onClick="getId(this.id)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
                 </tr>
 
               </tbody>
@@ -213,7 +272,66 @@
           </div>
         </div>
 	    </div>
-    </div>
 
+
+  </div>
+  
+  
+<div class="modal fade" id="edit" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+   		 <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Modifier votre détail</h4>
+      </div>
+          <div class="modal-body">
+          <div class="form-group">
+        <input class="form-control " type="text" placeholder="Nom de la resource" id="n1">
+        </div>
+        <div class="form-group">
+        
+        <input class="form-control " type="text" placeholder="Nom de la campus" id="n2">
+        </div>
+       <div class="form-group">
+        
+        <input class="form-control " type="text" placeholder="Quantite" id="n3">
+        </div>
+        <div class="form-group">
+        
+        <input class="form-control " type="text" placeholder="Description" id="n4">
+        </div>
+      </div>
+          <div class="modal-footer ">
+        <button type="button" class="btn btn-warning btn-lg"  onClick="Edit(this.id)" style="width: 100%;" data-dismiss="modal"> Update</button>
+      </div>
+        </div>
+    
+  </div>
+     
+    </div>
+    
+    
+    
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Supprimer cette entrée</h4>
+      </div>
+          <div class="modal-body">
+       
+       <div class="alert alert-danger">Voulez-vous vraiment supprimer cet enregistrement?</div>
+      
+      </div>
+        <div class="modal-footer ">
+        <button type="button" class="btn btn-success"  onClick="b();" data-dismiss="modal"> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> No</button>
+      </div>
+        </div>
+   
+  </div>
+   
+    </div>
   </body>
 </html>

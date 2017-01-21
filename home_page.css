@@ -28,8 +28,8 @@ body,html {
 }
 .pop-inner{
 	background-color: #fff;
-	width: 500px;
-	height: 400px;
+	width: 440px;
+	height: 420px;
 	padding: 25px;
 	margin: 15% auto;
 }
@@ -37,3 +37,4 @@ legend {
 	text-align: center;
 	text-color: #5B93D5;
 }
+
