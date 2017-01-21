@@ -39,27 +39,20 @@
 
     	var  prenom =  document.getElementById('prenom').value;
     	var  classe =  document.getElementById('classe').value;
-    	var  date =  document.getElementById('date').value;
-
-    	var  lieu =  document.getElementById('lieu').value;
     	var  numero =  document.getElementById('numero').value;
 
     	var table = document.getElementById("myTable");
-    	var row = table.insertRow(6);
+    	var row = table.insertRow(11);
     	var cell0 = row.insertCell(0);
     	var cell1 = row.insertCell(1);
     	var cell2 = row.insertCell(2);
     	var cell3 = row.insertCell(3);
     	var cell4 = row.insertCell(4);
-    	var cell5 = row.insertCell(5);
-    	var cell6 = row.insertCell(6);
-      cell0.innerText = '6';
+      cell0.innerText = '11';
     	cell1.innerText = nom;
     	cell2.innerText = prenom;
     	cell3.innerText = numero;
     	cell4.innerText = classe;
-    	cell5.innerText = date;
-    	cell6.innerText = lieu;
 
     	};
 	  </script>
@@ -76,12 +69,10 @@
       		 <div class="col-xs-4 well well-sm">
              <legend>Ajouter une element</legend>
 
-             <input class="form-control" placeholder="Nom" id="nom" type="text" />
-             <input class="form-control"  placeholder="Prenom" id="prenom" type="text" />
-             <input class="form-control"  placeholder="Numero d'etudiant" id="numero" type="text" />
-             <input class="form-control"  placeholder="Classe" id="classe" type="text" />
-             <input class="form-control" placeholder="Date" id="date" type="text" />
-             <input class="form-control"  placeholder="Lieu de naisance" id="lieu" type="text" />
+             <input class="form-control" placeholder="Nom de la resource" id="nom" type="text" />
+             <input class="form-control"  placeholder="Nom du campus" id="prenom" type="text" />
+             <input class="form-control"  placeholder="Quantite" id="numero" type="text" />
+             <input class="form-control"  placeholder="Description" id="classe" type="text" />
 
              <br>
 
@@ -129,68 +120,82 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nom</th>
-                  <th>Prenom</th>
-                  <th>Numero d'etudiant</th>
-                  <th>Class</th>
-                  <th>Date de naissance</th>
-                  <th>Lieu de naissance</th>
+                  <th>Nom de la resource</th>
+                  <th>Nom du campus</th>
+                  <th>Quantite</th>
+                  <th>Description</th>
                 </tr>
               </thead>
               <tbody >
                 <tr>
                   <td>1</td>
-                  <td>VO</td>
-                  <td>Ha Tram</td>
-                  <td>1452001</td>
-                  <td>CNTT01</td>
-                  <td>12/3/1995</td>
-                  <td>Ho Chi Minh ville</td>
-
-                  <td>
-                    <a href="user.html"><i class="icon-pencil"></i></a>
-                    <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                  </td>
+                  <td>Batiment I</td>
+                  <td>Nguyen Van Cu</td>
+                  <td>1</td>
+                  <td>Le plus haut batiment du campus.</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Le</td>
-                  <td>Tuan</td>
-                  <td>1622004</td>
-                  <td>VL05</td>
-                  <td>5/4/1998</td>
-                  <td>Phan Thiet</td>
-                  <td>
-                  <i class="icon-pencil"></i>
-                 <i class="icon-remove"></i>
-              		</td>
+                  <td>Batiment principal</td>
+                  <td>Linh Trung</td>
+                  <td>1</td>
+                  <td>Le plus grand batiment du campus.</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Tran</td>
-                  <td>Khai Phong</td>
-                  <td>1452018</td>
-                  <td>HOH03</td>
-                  <td>22/6/1995</td>
-                  <td>Vung Tau</td>
+                  <td>Batiment E</td>
+                  <td>Nguyen Van Cu</td>
+                  <td>1</td>
+                  <td>Le plus ancien batiment du campus.</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Lam</td>
-                  <td>Bao Thi</td>
-                  <td>1552014</td>
-                  <td>CNTT02</td>
-                  <td>8/7/1997</td>
-                  <td>Dong Nai</td>
+                  <td>Grande bibliotheque</td>
+                  <td>Linh Trung</td>
+                  <td>1</td>
+                  <td>Elle est tres grande.</td>
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td>Dang</td>
-                  <td>Kim Lien</td>
-                  <td>1452012</td>
-                  <td>VL02</td>
-                  <td>6/2/1995</td>
-                  <td>Lam Dong</td>
+                  <td>Vieux dortoir</td>
+                  <td>Linh Trung</td>
+                  <td>7</td>
+                  <td>Beaucoup d'étudiants vivent ici.</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Nouveau dortoir</td>
+                  <td>Linh Trung</td>
+                  <td>12</td>
+                  <td>Beaucoup d'étudiants vivent ici.</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Sentier ombragé</td>
+                  <td>Linh Trung</td>
+                  <td>1</td>
+                  <td>Très pratique pour une journée ensoleillée.</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Batiment A</td>
+                  <td>Nguyen Van Cu</td>
+                  <td>1</td>
+                  <td>Il appartient au département mathématiques.</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Porte principale</td>
+                  <td>Linh Trung</td>
+                  <td>1</td>
+                  <td>Pour arriver au Linh Trung campus, vous devez traverser ici.</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Plante en pot incliné</td>
+                  <td>Nguyen Van Cu</td>
+                  <td>1</td>
+                  <td>Pas de description.</td>
                 </tr>
 
               </tbody>

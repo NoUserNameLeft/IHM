@@ -4,14 +4,18 @@
     <title>Page d'accueil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" type="text/css" href="home_page.css">
+    <link rel="stylesheet" type="text/css" href="slide_show.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+    }
+    </style>
 
  	</head>
   <body>
@@ -37,6 +41,118 @@
         </ul>
       </div>
     </nav>
+
+    <div class="container">
+      <br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
+          <li data-target="#myCarousel" data-slide-to="8"></li>
+          <li data-target="#myCarousel" data-slide-to="9"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="1.jpg" alt="Batiment I">
+            <div class="carousel-caption">
+              <h3>Batiment I</h3>
+              <p>Le plus haut batiment du campus.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="2.jpg" alt="Bâtiment principal - Linh Trung campus">
+            <div class="carousel-caption">
+              <h3>Batiment principal - Linh Trung campus</h3>
+              <p>Le plus grand batiment du campus.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="3.jpg" alt="Batiment E">
+            <div class="carousel-caption">
+              <h3>Batiment E</h3>
+              <p>Le plus ancien batiment du campus.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="4.jpg" alt="Grande bibliothèque">
+            <div class="carousel-caption">
+              <h3>Grande bibliotheque</h3>
+              <p>Elle est tres grande.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="5.jpg" alt="Vieux dortoir">
+            <div class="carousel-caption">
+              <h3>Vieux dortoir</h3>
+              <p>Beaucoup d'étudiants vivent ici.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="6.jpg" alt="Nouveau dortoir">
+            <div class="carousel-caption">
+              <h3>Nouveau dortoir</h3>
+              <p>Beaucoup d'étudiants vivent ici.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="7.jpg" alt="Sentier ombragé">
+            <div class="carousel-caption">
+              <h3>Sentier ombragé</h3>
+              <p>Très pratique pour une journée ensoleillée.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="8.jpg" alt="Batiment A">
+            <div class="carousel-caption">
+              <h3>Batiment A</h3>
+              <p>Il appartient au département mathématiques.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="9.jpg" alt="Porte principale - Linh Trung campus">
+            <div class="carousel-caption">
+              <h3>Porte principale - Linh Trung campus</h3>
+              <p>Pour arriver au Linh Trung campus, vous devez traverser ici.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="10.jpg" alt="Plante en pot incliné">
+            <div class="carousel-caption">
+              <h3>Plante en pot incliné</h3>
+              <p>Pas de description.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
 
 
   </body>
