@@ -43,10 +43,39 @@
              <input class="form-control" name="username/email" placeholder="Nom d'utilisateur ou Courier" type="text" />
              <input class="form-control" name="username/email" placeholder="Mot de passe" type="password" />
              <hr>
-             <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+             <button class="btn btn-lg btn-primary btn-block" type="submit" id="myBtn">Se connecter</button>
            </form>
 
+<div id="myModal" class="modal">
 
+ 
+  <div class="modal-content">
+    <span class="close1"></span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+   setTimeout(function(event) {
+        modal.style.display = "none";
+    },3000);
+}
+
+
+</script>
 
          </div>
       </div>

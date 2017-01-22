@@ -302,7 +302,7 @@
         </div>
       </div>
           <div class="modal-footer ">
-        <button type="button" class="btn btn-warning btn-lg"  onClick="Edit(this.id)" style="width: 100%;" data-dismiss="modal"> Update</button>
+        <button type="button" class="btn btn-warning btn-lg"  id="myBtn"  onClick="Edit(this.id)" style="width: 100%;" data-dismiss="modal"> Update</button>
       </div>
         </div>
     
@@ -333,5 +333,36 @@
   </div>
    
     </div>
+    
+    <div id="myModal" class="modal">
+
+ 
+  <div class="modal-content alert alert-danger">
+    <span class="close1 " ></span>
+    <p><h3>Mettre à jour avec succès</h3></p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+   setTimeout(function(event) {
+        modal.style.display = "none";
+    },3000);
+}
+
+
+</script>
   </body>
 </html>
