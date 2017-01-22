@@ -116,7 +116,7 @@
                  <br>
 					
                       <div class="modal-footer ">
-                 <input  onclick="a();" id="myBtn" class="btn btn-warning btn-lg block" type="button" value="Ajouter" >
+                 <input   id="myBtn" class="btn btn-warning btn-lg block" type="button" value="Ajouter" >
                 </div>
                  
 
@@ -341,9 +341,7 @@
   <div class="modal-content alert alert-danger">
     <span class="close1 " ></span>
     <p><h3>Ajouter avec succès</h3></p>
-    <script>
-	a();
-	</script>
+  
   </div>
 
 </div>
@@ -364,6 +362,9 @@ btn.onclick = function() {
    setTimeout(function(event) {
         modal.style.display = "none";
     },3000);
+	$(document).ready(function() {
+    a();
+});
 }
 
 
