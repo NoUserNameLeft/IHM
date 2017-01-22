@@ -18,7 +18,7 @@ body,html {
   	color:#003333 ;
 }
 .pop-outer{
-
+	background-color: #D3EDEB;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -77,3 +77,4 @@ legend {
     text-decoration: none;
     cursor: pointer;
 }
+
