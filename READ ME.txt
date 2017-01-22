@@ -1,0 +1,7 @@
+Toutes nos pages:
+    + home_page.html
+    + resources.html
+    + resources_2.html
+    + search.html
+
+!!!!!     SUGGESTION: Ouvrir en premier home_page.html     !!!!!
